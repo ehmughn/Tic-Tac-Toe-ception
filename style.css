@@ -12,15 +12,24 @@ html {
 }
 
 #background {
-    width: 100vw; /*` Full width of the viewport */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full width of the viewport */
     height: 100vh; /* Full height of the viewport */
     background: linear-gradient(to bottom, rgb(53, 175, 241), rgb(36, 188, 127));
+    transition: opacity 2s ease;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 0;
     margin: 0;
+    z-index: -1; /* Place the background behind everything */
+}
+
+#background.fade {
+  opacity: 0;
 }
 
 body {
@@ -47,11 +56,11 @@ body {
     font-size: 3rem;
     cursor: pointer;
     font-family: 'VAGRoundedBold', sans-serif;
+    transition: all 0.5s ease;
 }
 
 .main_board_button:hover {
     background-color: hsl(122, 39%, 40%);
-    transition: all 0.5s ease;
 }
 
 .main_board_button:active {
@@ -70,11 +79,11 @@ body {
     font-size: 3rem;
     cursor: pointer;
     font-family: 'VAGRoundedBold', sans-serif;
+    transition: all 0.5s ease;
 }
 
 .sub_board_button:hover {
     background-color: hsl(22, 39%, 40%);
-    transition: all 0.5s ease;
 }
 
 .sub_board_button:active {
@@ -107,4 +116,105 @@ body {
 
 #sub_board {
     display: none;
+}
+
+#container {
+    position: relative; /* Ensure the container is the reference for absolute positioning */
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+}
+
+#left-sidebar,
+#right-sidebar {
+    position: relative; /* Ensure tooltips are positioned relative to the sidebar */
+    top: 0;
+    bottom: 0;
+    width: 20%; /* Adjust width as needed */
+    background-color: rgba(47, 47, 47, 0.2); /* Light gray with 50% transparency */
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    overflow-y: auto; /* Allow scrolling if content overflows */
+    z-index: 1; /* Ensure the sidebars are above the background */
+    overflow: visible; /* Allow tooltips to overflow outside the sidebar */
+}
+
+#left-sidebar {
+    left: 0; /* Position the left sidebar on the left */
+}
+
+#right-sidebar {
+    right: 0; /* Position the right sidebar on the right */
+}
+
+#main-content {
+    flex: 1; /* Take up remaining space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent; /* Ensure the main content doesn't block the gradient */
+    z-index: 0; /* Keep the main content below the sidebars */
+}
+
+.powerup-button {
+    position: relative; /* Required for positioning the tooltip */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%; /* Adjust button width */
+    margin: 10px auto; /* Center the button */
+    padding: 10px;
+    font-size: 1rem;
+    font-family: 'VAGRoundedBold', sans-serif;
+    color: white;
+    background-color: hsl(200, 70%, 50%);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    overflow: visible; /* Ensure the tooltip is not clipped */
+}
+
+.powerup-button img {
+    width: 50px; /* Adjust image size */
+    height: 50px;
+    margin-bottom: 5px;
+}
+
+.powerup-button span {
+    font-size: 0.9rem;
+    color: white;
+    text-align: center; /* Center-align the text */
+    white-space: normal; /* Allow text to wrap to the next line */
+    overflow-wrap: break-word; /* Break long words if necessary */
+    word-wrap: break-word; /* Ensure compatibility with older browsers */
+}
+
+.powerup-button:hover {
+    background-color: hsl(200, 70%, 40%);
+}
+
+.powerup-button:active {
+    background-color: hsl(200, 70%, 30%);
+}
+
+/* Tooltip styling */
+.tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background for the tooltip */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    white-space: normal; /* Allow text to wrap to the next line */
+    overflow-wrap: break-word; /* Break long words if necessary */
+    word-wrap: break-word; /* Ensure compatibility with older browsers */
+    pointer-events: none; /* Prevent interaction with the tooltip */
+    z-index: 1000; /* Ensure the tooltip appears above other elements */
+    display: none; /* Initially hidden */
+    max-width: 300px; /* Set a maximum width for the tooltip */
+    text-align: center; /* Center-align the tooltip text */
 }

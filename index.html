@@ -7,51 +7,38 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="background">
-        <h1>Welcome to <br><span class="emphasized">Tic-Tac-Toe -ception</span></h1>
-        <br>
-        <div id="main_board">
-            <table>
-                <tr>
-                    <td>
-                        <button class="main_board_button" id="main_button00"></button>
-                    </td>
-                    <td>
-                        <button class="main_board_button" id="main_button01"></button>
-                    </td>
-                    <td>
-                        <button class="main_board_button" id="main_button02"></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <button class="main_board_button" id="main_button10"></button>
-                    </td>
-                    <td>
-                        <button class="main_board_button" id="main_button11"></button>
-                    </td>
-                    <td>
-                        <button class="main_board_button" id="main_button12"></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <button class="main_board_button" id="main_button20"></button>
-                    </td>
-                    <td>
-                        <button class="main_board_button" id="main_button21"></button>
-                    </td>
-                    <td>
-                        <button class="main_board_button" id="main_button22"></button>
-                    </td>
-                </tr>
-            </table>
-            <p id="main_message">Player X, choose a cell</p>
-            <button id="reset_button">Reset</button>
+    <div id="container">
+        <div id="left-sidebar">
+            <p>Player X</p>
         </div>
-        <div id="sub_board">
-            <table>
-                <tr>
+        <div id="main-content">
+            <div id="background">
+                <h1>Welcome to <br><span class="emphasized">Tic-Tac-Toe -ception</span></h1>
+                <br>
+                <div id="main_board">
+                    <table>
+                        <tr>
+                            <td><button class="main_board_button" id="main_button00"></button></td>
+                            <td><button class="main_board_button" id="main_button01"></button></td>
+                            <td><button class="main_board_button" id="main_button02"></button></td>
+                        </tr>
+                        <tr>
+                            <td><button class="main_board_button" id="main_button10"></button></td>
+                            <td><button class="main_board_button" id="main_button11"></button></td>
+                            <td><button class="main_board_button" id="main_button12"></button></td>
+                        </tr>
+                        <tr>
+                            <td><button class="main_board_button" id="main_button20"></button></td>
+                            <td><button class="main_board_button" id="main_button21"></button></td>
+                            <td><button class="main_board_button" id="main_button22"></button></td>
+                        </tr>
+                    </table>
+                    <p id="main_message">Player X, choose a cell</p>
+                    <button id="reset_button">Reset</button>
+                </div>
+                <div id="sub_board">
+                    <table>
+                        <tr>
                     <td>
                         <button class="sub_board_button" id="sub_button00"></button>
                     </td>
@@ -84,10 +71,16 @@
                         <button class="sub_board_button" id="sub_button22"></button>
                     </td>
                 </tr>
-            </table>
-            <p id="sub_message">Player X's turn</p>
+                    </table>
+                    <p id="sub_message">Player X's turn</p>
+                </div>
+            </div>
         </div>
+        <div id="right-sidebar">
+            <p>Player O</p>
+        </div>
+        <div id="tooltip" class="tooltip"></div>
     </div>
     <script src="index.js"></script>
 </body>
-</html>  
+</html>
