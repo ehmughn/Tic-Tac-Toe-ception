@@ -1,0 +1,110 @@
+@font-face {
+    font-family: 'VAGRoundedBold';
+    src: url('./fonts/VAG Rounded Std Bold.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    text-align: center;
+    vertical-align: middle;
+    font-family: 'VAGRoundedBold', sans-serif;
+}
+
+#background {
+    width: 100vw; /*` Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    background: linear-gradient(to bottom, rgb(53, 175, 241), rgb(36, 188, 127));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.emphasized {
+    font-size: 3rem; /* Increase font size */
+    font-weight: bold; /* Make it bold */
+    color: hsl(0, 82%, 34%); /* Add a vibrant color */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Add a shadow for emphasis */
+}
+
+.main_board_button {
+    background-color: hsl(122, 39%, 50%);
+    border: 3px solid black;
+    width: 5rem;
+    height: 5rem;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 3rem;
+    cursor: pointer;
+    font-family: 'VAGRoundedBold', sans-serif;
+}
+
+.main_board_button:hover {
+    background-color: hsl(122, 39%, 40%);
+    transition: all 0.5s ease;
+}
+
+.main_board_button:active {
+    background-color: hsl(122, 39%, 30%);
+}
+
+.sub_board_button {
+    background-color: hsl(22, 39%, 50%);
+    border: 3px solid black;
+    width: 5rem;
+    height: 5rem;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 3rem;
+    cursor: pointer;
+    font-family: 'VAGRoundedBold', sans-serif;
+}
+
+.sub_board_button:hover {
+    background-color: hsl(22, 39%, 40%);
+    transition: all 0.5s ease;
+}
+
+.sub_board_button:active {
+    background-color: hsl(22, 39%, 30%);
+}
+
+#reset_button {
+    display: none;
+    margin: 20px auto;
+    background-color: hsl(0, 0%, 70%);
+    height: 2rem;
+    width: 5rem;
+    font-size: 1rem;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-family: 'VAGRoundedBold', sans-serif;
+}
+
+#reset_button:hover {
+    background-color: hsl(0, 0%, 60%);
+}
+
+#reset_button:active {
+    background-color: hsl(0, 0%, 50%);
+}
+
+#main_board {
+    display: block;
+}
+
+#sub_board {
+    display: none;
+}
